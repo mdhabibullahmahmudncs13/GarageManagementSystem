@@ -17,7 +17,6 @@ public class Bike extends Vehicle {
     }
 
     public boolean isSportsBike() { return isSportsBike; }
-    public void setSportsBike(boolean sportsBike) { this.isSportsBike = sportsBike; }
 
     // POLYMORPHISM: Returns "Bike"
     @Override
@@ -40,10 +39,5 @@ public class Bike extends Vehicle {
         long hours = getParkingHours();
         if (hours < 1) hours = 1;
         return hours * parkingRatePerHour;
-    }
-
-    @Override
-    public String getPaymentMethod() {
-        return "Cash / Mobile Banking";
     }
 }

@@ -6,5 +6,4 @@
  */
 public interface Payable {
     double calculateFee();
-    String getPaymentMethod();
 }

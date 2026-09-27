@@ -1,31 +1,14 @@
 /*
- * ============================================================================
- * GARAGE MANAGEMENT SYSTEM
- * Subject: Object Oriented Programming (OOP) in Java
- * Lab Exam: September 28, 2026
- * Student: Md Habibullah
- * 
- * This project demonstrates ALL FOUR PILLARS OF OOP:
- *   1. ABSTRACTION   - abstract classes, interfaces
- *   2. ENCAPSULATION - private fields, public getters/setters
- *   3. INHERITANCE   - Car/Bike/Truck extend Vehicle
- *   4. POLYMORPHISM  - method overriding, interface polymorphism
- * ============================================================================
+ * GARAGE MANAGEMENT SYSTEM - OOP Lab Exam (September 28, 2026) - Md Habibullah
+ * Pillars: Abstraction (abstract Vehicle, Payable), Encapsulation (private fields),
+ * Inheritance (Car/Bike/Truck extend Vehicle), Polymorphism (overridden calculateFee/displayDetails).
  */
 
 import java.util.Scanner;
 
 public class GarageManagementApp {
     public static void main(String[] args) {
-        System.out.println("╔══════════════════════════════════════════╗");
-        System.out.println("║   GARAGE MANAGEMENT SYSTEM               ║");
-        System.out.println("║   OOP Project - Java                     ║");
-        System.out.println("║   Demonstrates: Abstraction,             ║");
-        System.out.println("║   Encapsulation, Inheritance,           ║");
-        System.out.println("║   and Polymorphism                       ║");
-        System.out.println("║   Exam Date: September 28, 2026         ║");
-        System.out.println("╚══════════════════════════════════════════╝\n");
-
+        System.out.println("==== GARAGE MANAGEMENT SYSTEM (OOP Project) ====");
         System.out.println("Select Mode:");
         System.out.println("1. Graphical User Interface (GUI)");
         System.out.println("2. Command Line Interface (CLI)");

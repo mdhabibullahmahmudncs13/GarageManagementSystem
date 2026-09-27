@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -261,11 +260,7 @@ public class GarageGUI extends JFrame {
         bottomPanel.add(billPanel);
         add(bottomPanel, BorderLayout.SOUTH);
 
-        // ===== OUTPUT CONSOLE =====
-        JPanel mainCenter = new JPanel(new BorderLayout());
-        mainCenter.add(centerPanel, BorderLayout.CENTER);
-        
-        // We'll add output to the east
+        // ===== OUTPUT CONSOLE (EAST) =====
         JPanel eastPanel = new JPanel(new BorderLayout());
         eastPanel.setBorder(BorderFactory.createTitledBorder("Console Output"));
         txtOutput = new JTextArea();
@@ -277,7 +272,6 @@ public class GarageGUI extends JFrame {
         eastPanel.add(outputScrollPane, BorderLayout.CENTER);
         eastPanel.setPreferredSize(new Dimension(300, 400));
 
-        add(mainCenter, BorderLayout.CENTER);
         add(eastPanel, BorderLayout.EAST);
 
         // Initialize
@@ -450,8 +444,7 @@ public class GarageGUI extends JFrame {
     }
 
     private void log(String message) {
-        String timestamp = new SimpleDateFormat("HH:mm:ss").format(new Date());
-        txtOutput.append("[" + timestamp + "] " + message + "\n");
+        txtOutput.append("[" + new java.text.SimpleDateFormat("HH:mm:ss").format(new Date()) + "] " + message + "\n");
         txtOutput.setCaretPosition(txtOutput.getDocument().getLength());
     }
 

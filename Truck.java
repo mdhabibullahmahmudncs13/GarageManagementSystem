@@ -17,7 +17,6 @@ public class Truck extends Vehicle {
     }
 
     public int getCapacityInTons() { return capacityInTons; }
-    public void setCapacityInTons(int capacityInTons) { this.capacityInTons = capacityInTons; }
 
     // POLYMORPHISM: Returns "Truck"
     @Override
@@ -40,10 +39,5 @@ public class Truck extends Vehicle {
         long hours = getParkingHours();
         if (hours < 1) hours = 1;
         return hours * parkingRatePerHour;
-    }
-
-    @Override
-    public String getPaymentMethod() {
-        return "Cash / Bank Transfer";
     }
 }

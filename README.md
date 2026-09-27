@@ -36,7 +36,7 @@ abstract class Vehicle implements VehicleInfo, Payable {
 
 **How it's implemented:**
 - All fields in `Vehicle` are `private`
-- Access only through public getters and setters
+- Access only through public getters (data is set once in the constructor)
 - `GarageSlot` encapsulates slot state — external code cannot directly modify `occupiedBy`
 - `Bill` class encapsulates billing data
 
@@ -111,7 +111,7 @@ v3.calculateFee();  // Returns hours * 150.0 (Truck rate)
 │  ┌─────────────┐    ┌────────────────┐             │
 │  │  Payable    │    │  VehicleInfo   │             │
 │  │ calculateFee│    │ displayDetails │             │
-│  │getPaymentMtd│    │getVehicleType  │             │
+│  └─────────────┘    │getVehicleType  │             │
 │  └─────────────┘    └────────────────┘             │
 └─────────────────────────────────────────────────────┘
                          ▲

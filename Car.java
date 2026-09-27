@@ -21,9 +21,7 @@ public class Car extends Vehicle {
     }
 
     public int getNumberOfDoors() { return numberOfDoors; }
-    public void setNumberOfDoors(int numberOfDoors) { this.numberOfDoors = numberOfDoors; }
     public boolean isHasAC() { return hasAC; }
-    public void setHasAC(boolean hasAC) { this.hasAC = hasAC; }
 
     // ========== POLYMORPHISM (method overriding) ==========
     @Override
@@ -47,10 +45,5 @@ public class Car extends Vehicle {
         long hours = getParkingHours();
         if (hours < 1) hours = 1;
         return hours * parkingRatePerHour;
-    }
-
-    @Override
-    public String getPaymentMethod() {
-        return "Cash / Mobile Banking";
     }
 }

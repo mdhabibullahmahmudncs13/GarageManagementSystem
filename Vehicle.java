@@ -38,30 +38,16 @@ public abstract class Vehicle implements VehicleInfo, Payable {
         this.exitTime = null;
     }
 
-    // ========== ENCAPSULATION (GETTERS & SETTERS) ==========
-    // Public methods provide CONTROLLED access to private fields.
-    
+    // ========== ENCAPSULATION (GETTERS) ==========
+    // Read-only public access; nothing may rewrite a vehicle's data.
+
     public String getVehicleId() { return vehicleId; }
-    public void setVehicleId(String vehicleId) { this.vehicleId = vehicleId; }
-    
     public String getOwnerName() { return ownerName; }
-    public void setOwnerName(String ownerName) { this.ownerName = ownerName; }
-    
     public String getOwnerContact() { return ownerContact; }
-    public void setOwnerContact(String ownerContact) { this.ownerContact = ownerContact; }
-    
     public String getBrand() { return brand; }
-    public void setBrand(String brand) { this.brand = brand; }
-    
     public String getModel() { return model; }
-    public void setModel(String model) { this.model = model; }
-    
     public int getYear() { return year; }
-    public void setYear(int year) { this.year = year; }
-    
     public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
-    
     public Date getEntryTime() { return entryTime; }
     public Date getExitTime() { return exitTime; }
     

@@ -10,10 +10,8 @@ public class GarageManagementSystem {
     private List<GarageSlot> slots;
     private Map<String, Vehicle> parkedVehicles;
     private List<Bill> billHistory;
-    private int totalSpaces;
 
     public GarageManagementSystem(int totalSpaces) {
-        this.totalSpaces = totalSpaces;
         this.slots = new ArrayList<>();
         this.parkedVehicles = new HashMap<>();
         this.billHistory = new ArrayList<>();
@@ -25,15 +23,15 @@ public class GarageManagementSystem {
     }
 
     public boolean isFull() {
-        return parkedVehicles.size() >= totalSpaces;
+        return parkedVehicles.size() >= slots.size();
     }
 
     public int getAvailableSlots() {
-        return totalSpaces - parkedVehicles.size();
+        return slots.size() - parkedVehicles.size();
     }
 
     public int getTotalSpaces() {
-        return totalSpaces;
+        return slots.size();
     }
 
     // POLYMORPHISM in action: treat all vehicles uniformly via Vehicle reference
@@ -119,7 +117,7 @@ public class GarageManagementSystem {
         for (GarageSlot slot : slots) {
             slot.displaySlot();
         }
-        System.out.println("Total: " + totalSpaces + " | Occupied: " + parkedVehicles.size() + " | Available: " + getAvailableSlots());
+        System.out.println("Total: " + slots.size() + " | Occupied: " + parkedVehicles.size() + " | Available: " + getAvailableSlots());
     }
 
     public void displayBillHistory() {
@@ -132,16 +130,6 @@ public class GarageManagementSystem {
             System.out.println(bill);
         }
         System.out.printf("Total Revenue: BDT %.2f%n", getTotalRevenue());
-    }
-
-    public List<Vehicle> searchByOwner(String ownerName) {
-        List<Vehicle> results = new ArrayList<>();
-        for (Vehicle v : parkedVehicles.values()) {
-            if (v.getOwnerName().equalsIgnoreCase(ownerName)) {
-                results.add(v);
-            }
-        }
-        return results;
     }
 
     public List<Vehicle> getAllParkedVehicles() {
